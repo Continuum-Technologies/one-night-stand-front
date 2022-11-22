@@ -1,26 +1,68 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+.hero_bg {
+  background-image: url("/one.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* opacity: 0.5; */
+  min-height: 500px;
+}
+.body {
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif !important;
+  height: 100vh;
+}
+.brand {
+  color: #eb4354 !important;
+}
+.link {
+  color: #eb4354 !important;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.link:hover {
+  text-decoration: underline;
+  color: #eb4354 !important;
 }
 
-* {
-  box-sizing: border-box;
+/* Hero section btn */
+.hero_main_btn {
+  background-color: #eb4354;
+  color: #ffffff;
+  border: #eb4354;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.hero_main_btn:hover {
+  background-color: #eb4354;
+  color: #ffffff;
+  border: #eb4354;
+}
+
+.hero_sec_btn {
+  background-color: #ffffff;
+  color: #eb4354;
+  border: #eb4354;
+  border: 1px solid #eb4354;
+}
+
+.hero_sec_btn:hover {
+  /* margin-right: 50px; */
+  background-color: #ffffff;
+  color: #eb4354;
+  border: 1px solid #eb4354;
+}
+
+/* Hero section btn */
+
+.icon {
+  font-size: 20px;
+}
+
+.icon:hover {
+  font-size: 20px;
+  color: #eb4354;
+}
+
+.footer {
+  min-height: 30vh;
 }
