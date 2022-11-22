@@ -1110,7 +1110,7 @@ export default function Terms() {
           The One Night Stand Group has taken reasonable steps to ensure the
           currency, availability, correctness and completeness of the
           information contained on One Night Stand and provides that information
-          on an "as is", "as available" basis. The One Night Stand Group does
+          on an &quot;as is&quot;, &quot;as available&quot; basis. The One Night Stand Group does
           not give or make any warranty or representation of any kind about the
           information contained on One Night Stand, whether express or implied.
           Use of One Night Stand and the materials available on it is at your

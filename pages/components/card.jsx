@@ -14,6 +14,7 @@ export default function Card() {
             <Image
               height={300}
               width={300}
+              alt={'one-night-stand'}
               src={"/card1.webp"}
               className={"card-img-top"}
             />
@@ -38,6 +39,7 @@ export default function Card() {
             <Image
               height={300}
               width={300}
+              alt={'one-night-stand'}
               src={"/one.webp"}
               cclassName={"card-img-top"}
             />
@@ -61,6 +63,7 @@ export default function Card() {
           <div className="card">
             <Image
               height={300}
+              alt={'one-night-stand'}
               width={300}
               src={"/one.webp"}
               cclassName={"card-img-top"}
@@ -91,7 +94,7 @@ export default function Card() {
           }
         >
           <button className="btn hero_main_btn btn-lg">
-            <i class="bi bi-google-play text-white"></i> Get in on Google
+            <i className="bi bi-google-play text-white"></i> Get in on Google
             Playstore
           </button>
         </Link>
