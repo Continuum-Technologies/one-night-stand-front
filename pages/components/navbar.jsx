@@ -1,12 +1,13 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-md  pb-2 fixed-top bg-white">
       <div className="container">
-        <a className="navbar-brand brand" href="/">
-          one night stand
-        </a>
+        <Link href="/">
+          <h1 className="navbar-brand brand">one night stand</h1>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,24 +22,24 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav ms-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                support
-              </a>
+              <Link href="#">
+                <p className="nav-link active">support</p>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                learn
-              </a>
+              <Link href="#">
+                <p className="nav-link active">learn</p>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                safety
-              </a>
+              <Link href="#">
+                <p className="nav-link active">safety</p>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                download
-              </a>
+              <Link href="#">
+                <p className="nav-link active">download</p>
+              </Link>
             </li>
           </ul>
         </div>

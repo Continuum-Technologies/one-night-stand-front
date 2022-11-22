@@ -13,11 +13,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>one night stand</title>
-        <style>
-          @import
-          url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
-          
-        </style>
       </Head>
       <Component {...pageProps} />
     </>
