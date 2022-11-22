@@ -3,7 +3,8 @@ import Layout from "../components/layout";
 const Privacy = () => {
   return (
     <Layout>
-      <div className="container">
+      <div className="container pt-5">
+        <div className="pt-5">
         <h2 className="text-center">One Night Stand Privacy Policy</h2>
         <p>
           Welcome to the One Night Stand Privacy Policy &#91;“Policy”&#93;! This
@@ -14,7 +15,7 @@ const Privacy = () => {
         <p>
           Whilst you &apos;re enjoying the One Night Stand mobile application
           &#91;including the desktop version&#93; &#91;“App”&#93;, our websites
-          and microsites &#91;such as One Night Stand.com&#93; or using our
+          and microsites &#91;such as one-night-stand.com&#93; or using our
           digital products and services &#91;such as our competitions or
           surveys&#93; &#91;together, referred to in this Privacy Policy as our
           “Sites”&#93;, we collect some information about you. In addition, you
@@ -1393,6 +1394,7 @@ const Privacy = () => {
         </p>
         <h3>Effective date</h3>
         <p>This Privacy Policy was last updated 31st October 2022.</p>
+      </div>
       </div>
     </Layout>
   );

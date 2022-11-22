@@ -5,7 +5,7 @@ export default function Terms() {
   return (
     <Layout>
       <div className="container pt-5">
-        <h2 className="text-center">
+        <h2 className="text-center pt-5">
           One Night Stand Terms and Conditions of Use
         </h2>
         <p>
