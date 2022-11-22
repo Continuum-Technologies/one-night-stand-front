@@ -18,6 +18,7 @@
 }
 .link {
   color: #eb4354 !important;
+  cursor: pointer;
 }
 
 .link:hover {
