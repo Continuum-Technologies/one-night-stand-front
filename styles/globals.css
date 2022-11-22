@@ -31,29 +31,29 @@
 
 /* Hero section btn */
 .hero_main_btn {
-  background-color: #eb4354;
-  color: #ffffff;
-  border: #eb4354;
+  background-color: #eb4354 !important;
+  color: #ffffff !important;
+  border: #eb4354 !important;
 }
 
 .hero_main_btn:hover {
-  background-color: #eb4354;
-  color: #ffffff;
-  border: #eb4354;
+  background-color: #eb4354 !important;
+  color: #ffffff !important;
+  border: #eb4354 !important;
 }
 
 .hero_sec_btn {
-  background-color: #ffffff;
-  color: #eb4354;
-  border: #eb4354;
-  border: 1px solid #eb4354;
+  background-color: #ffffff !important;
+  color: #eb4354 !important;
+  border: #eb4354 !important;
+  border: 1px solid #eb4354 !important;
 }
 
 .hero_sec_btn:hover {
   /* margin-right: 50px; */
-  background-color: #ffffff;
-  color: #eb4354;
-  border: 1px solid #eb4354;
+  background-color: #ffffff !important;
+  color: #eb4354 !important;
+  border: 1px solid #eb4354 !important;
 }
 
 /* Hero section btn */
@@ -64,7 +64,7 @@
 
 .icon:hover {
   font-size: 20px;
-  color: #eb4354;
+  color: #eb4354 !important;
 }
 
 .footer {

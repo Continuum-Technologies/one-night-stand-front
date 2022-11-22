@@ -1,7 +1,7 @@
+import { useEffect } from "react";
+import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../styles/globals.css";
-import { useEffect } from "react";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
