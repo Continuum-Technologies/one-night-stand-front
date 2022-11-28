@@ -1,26 +1,48 @@
-# module install
 FROM node:lts-alpine as module-install-stage
-# set working directory
+
 WORKDIR /one_night_stand
-# add `/one_night_stand/node_modules/.bin` to $PATH
-ENV PATH /one_night_stand/node_modules/.bin:$PATH
 
-COPY package.json /one_night_stand/package.json
+COPY package.json yarn.lock ./
 
-# RUN apk add yarn
-RUN yarn install --production
+RUN yarn install --frozwn-lockfile
 
-# build
-FROM node:lts-alpine as build-stage
-COPY --from=module-install-stage /one_night_stand/node_modules/ /one_night_stand/node_modules
+
+
+FROM node:16-alpine3.16 AS BUILD_IMAGE
+
 WORKDIR /one_night_stand
+
+COPY --from=deps /one_night_stand/node_modules ./node_modules
+
 COPY . .
+
 RUN yarn build
 
-# serve
-FROM node:lts-alpine
+RUN rm -rf node_modules
 
-COPY --from=build-stage /one_night_stand/.next/ /one_night_stand/.next
-RUN npm install -g serve
-# start one_night_stand
-CMD serve -s /one_night_stand/.next -l 3000
+RUN yarn install --production --frozen-lockfile --ignore-scripts --prefer-offline
+
+# This starts our one_night_standlication's run image - the final output of build.
+FROM node:16-alpine3.16
+
+ENV NODE_ENV production
+
+RUN addgroup -g 1001 -S one_night_stand
+
+RUN adduser -S one_night_stand -u 1001
+
+WORKDIR /one_night_stand
+
+COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/package.json /one_night_stand/yarn.lock ./
+COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/node_modules ./node_modules
+COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/public ./public
+COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/.next ./.next
+
+# 4. OPTIONALLY the next.config.js, if your one_night_stand has one
+COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/next.config.js  ./
+
+USER one_night_stand3
+
+EXPOSE 3000
+
+CMD [ "yarn", "start" ]
