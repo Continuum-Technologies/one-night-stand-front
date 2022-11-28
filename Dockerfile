@@ -41,7 +41,7 @@ COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stan
 # 4. OPTIONALLY the next.config.js, if your one_night_stand has one
 COPY --from=build-stage --chown=one_night_stand:one_night_stand /one_night_stand/next.config.js  ./
 
-USER one_night_stand3
+USER one_night_stand
 
 EXPOSE 3000
 
