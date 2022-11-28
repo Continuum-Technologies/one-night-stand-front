@@ -33,10 +33,10 @@ RUN adduser -S one_night_stand -u 1001
 
 WORKDIR /one_night_stand
 
-COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/package.json /one_night_stand/yarn.lock ./
-COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/node_modules ./node_modules
-COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/public ./public
-COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/.next ./.next
+COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/package.json /one_night_stand/yarn.lock ./
+COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/node_modules ./node_modules
+COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/public ./public
+COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/.next ./.next
 
 # 4. OPTIONALLY the next.config.js, if your one_night_stand has one
 COPY --from=build-stage --chown=one_night_stand:one_night_stand /one_night_stand/next.config.js  ./
