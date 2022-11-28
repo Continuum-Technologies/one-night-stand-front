@@ -8,11 +8,11 @@ RUN yarn install --frozwn-lockfile
 
 
 
-FROM node:16-alpine3.16 AS BUILD_IMAGE
+FROM node:lts-alpine as build-stage
 
 WORKDIR /one_night_stand
 
-COPY --from=deps /one_night_stand/node_modules ./node_modules
+COPY --from=module-install-stage  /one_night_stand/node_modules ./node_modules
 
 COPY . .
 
@@ -23,7 +23,7 @@ RUN rm -rf node_modules
 RUN yarn install --production --frozen-lockfile --ignore-scripts --prefer-offline
 
 # This starts our one_night_standlication's run image - the final output of build.
-FROM node:16-alpine3.16
+FROM node:lts-alpine
 
 ENV NODE_ENV production
 
@@ -39,7 +39,7 @@ COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand
 COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/.next ./.next
 
 # 4. OPTIONALLY the next.config.js, if your one_night_stand has one
-COPY --from=BUILD_IMAGE --chown=one_night_stand:one_night_stand /one_night_stand/next.config.js  ./
+COPY --from=build-stage --chown=one_night_stand:one_night_stand /one_night_stand/next.config.js  ./
 
 USER one_night_stand3
 
