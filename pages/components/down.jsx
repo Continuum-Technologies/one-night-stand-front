@@ -5,7 +5,7 @@ export default function Down() {
   return (
     <div className="container pt-5">
       <div className="justify-content-center text-center pt-5 pb-5">
-        <h1>Dowload the One Night Stand App Now.</h1>
+        <h1>Download the One Night Stand App Now.</h1>
         <p>It takes two to tango!</p>
         <br />
         <Link

@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-md  pb-2 fixed-top bg-white">
       <div className="container">
         <Link href="/">
-          <h1 className="navbar-brand brand">one night stand</h1>
+          <h1 className="navbar-brand brand">One Night Stand</h1>
         </Link>
         <button
           className="navbar-toggler"
@@ -22,22 +22,22 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav ms-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <Link href="#">
+              <Link href="/support">
                 <p className="nav-link active">support</p>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="#">
+              <Link href="/learn">
                 <p className="nav-link active">learn</p>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="#">
+              <Link href="/safety">
                 <p className="nav-link active">safety</p>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="#">
+              <Link href="/download">
                 <p className="nav-link active">download</p>
               </Link>
             </li>
