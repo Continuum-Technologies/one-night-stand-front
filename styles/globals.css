@@ -1,75 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
 
-.nav-link {
-  cursor: pointer;
+/* one night stand primary color */
+
+.primary {
+  color: #eb4354;
 }
-.hero_bg {
-  background-image: url("/one.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* opacity: 0.5; */
-  min-height: 500px;
+.bg-primary {
+  background-color: #eb4354;
 }
-.body {
-  background-color: #ffffff;
-  font-family: "Roboto", sans-serif !important;
-  height: 100vh;
-}
-.brand {
-  color: #eb4354 !important;
-}
-.link {
-  color: #eb4354 !important;
-  cursor: pointer;
+.border-primary {
+  border-color: #eb4354;
 }
 
-.link:hover {
-  text-decoration: underline;
-  color: #eb4354 !important;
-}
-
-/* Hero section btn */
-.hero_main_btn {
-  background-color: #eb4354 !important;
-  color: #ffffff !important;
-  border: #eb4354 !important;
-}
-
-.hero_main_btn:hover {
-  background-color: #eb4354 !important;
-  color: #ffffff !important;
-  border: #eb4354 !important;
-}
-
-.hero_sec_btn {
-  background-color: #ffffff !important;
-  color: #eb4354 !important;
-  border: #eb4354 !important;
-  border: 1px solid #eb4354 !important;
-}
-
-.hero_sec_btn:hover {
-  /* margin-right: 50px; */
-  background-color: #ffffff !important;
-  color: #eb4354 !important;
-  border: 1px solid #eb4354 !important;
-}
-
-/* Hero section btn */
-
-.icon {
-  font-size: 20px;
-}
-
-.icon:hover {
-  font-size: 20px;
-  color: #eb4354 !important;
-}
-
-.footer {
-  max-height: 30vh;
-  position: fixed;
-   bottom: 0;
-   width: 100%;
+*::-webkit-scrollbar {
+  width: 0;
 }
