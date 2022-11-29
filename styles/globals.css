@@ -68,5 +68,8 @@
 }
 
 .footer {
-  min-height: 30vh;
+  max-height: 30vh;
+  position: fixed;
+   bottom: 0;
+   width: 100%;
 }

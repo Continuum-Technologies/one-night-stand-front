@@ -1264,7 +1264,7 @@ export default function Terms() {
           forum. You agree that you will not file or participate in a class
           action against us.
         </p>
-        <h2> 18. THE One Night Stand GROUP.</h2>{" "}
+        <h2> 18. THE ONE NIGHT STAND GROUP.</h2>{" "}
         <p>
           The Terms constitute a binding legal agreement between you as user
           &#91;“you”&#93; and the One Night Stand Group &#91;“we” or “us”&#93;.
@@ -1276,7 +1276,7 @@ export default function Terms() {
           Payments L.L.C. &#91;a Delaware limited liability company&#93;.
         </p>
         <h3>Effective date</h3>
-        <p>The Terms were last updated on: 19th November, 2021.</p>
+        <p>The Terms were last updated on: 29th November, 2021.</p>
       </div>
     </Layout>
   );
