@@ -29,8 +29,6 @@ RUN pnpm build
 
 RUN rm -rf node_modules
 
-RUN ls -l 
-
 RUN pnpm install --production --ignore-scripts --prefer-offline
 
 # This starts our one_night_standlication's run image - the final output of build.
