@@ -2,7 +2,7 @@ FROM node:lts-alpine as module-install-stage
 
 WORKDIR /one_night_stand
 
-COPY package.json pnpm-lock.lock ./
+COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm install --frozwn-lockfile
 
