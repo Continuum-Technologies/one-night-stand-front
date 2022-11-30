@@ -4,7 +4,7 @@ WORKDIR /one_night_stand
 
 COPY package.json pnpm-lock.yaml ./
 
-RUN pnpm install --frozwn-lockfile
+RUN pnpm install
 
 
 
@@ -20,7 +20,7 @@ RUN pnpm build
 
 RUN rm -rf node_modules
 
-RUN pnpm install --production --frozen-lockfile --ignore-scripts --prefer-offline
+RUN pnpm install --production --ignore-scripts --prefer-offline
 
 # This starts our one_night_standlication's run image - the final output of build.
 FROM node:lts-alpine
