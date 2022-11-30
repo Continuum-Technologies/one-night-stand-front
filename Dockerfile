@@ -2,9 +2,9 @@ FROM node:lts-alpine as module-install-stage
 
 WORKDIR /one_night_stand
 
-COPY package.json yarn.lock ./
+COPY package.json pnpm-lock.lock ./
 
-RUN yarn install --frozwn-lockfile
+RUN pnpm install --frozwn-lockfile
 
 
 
@@ -16,11 +16,11 @@ COPY --from=module-install-stage  /one_night_stand/node_modules ./node_modules
 
 COPY . .
 
-RUN yarn build
+RUN pnpm build
 
 RUN rm -rf node_modules
 
-RUN yarn install --production --frozen-lockfile --ignore-scripts --prefer-offline
+RUN pnpm install --production --frozen-lockfile --ignore-scripts --prefer-offline
 
 # This starts our one_night_standlication's run image - the final output of build.
 FROM node:lts-alpine
@@ -33,7 +33,7 @@ RUN adduser -S one_night_stand -u 1001
 
 WORKDIR /one_night_stand
 
-COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/package.json /one_night_stand/yarn.lock ./
+COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/package.json /one_night_stand/pnpm-lock.lock ./
 COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/node_modules ./node_modules
 COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/public ./public
 COPY --from=build-stage  --chown=one_night_stand:one_night_stand /one_night_stand/.next ./.next
@@ -45,4 +45,4 @@ USER one_night_stand
 
 EXPOSE 3000
 
-CMD [ "yarn", "start" ]
+CMD [ "pnpm", "start" ]
