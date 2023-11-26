@@ -6,20 +6,25 @@ import {
   Badge,
   Button,
   Group,
-  Container,
   Grid,
   Loader,
-  Space
+  Divider
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useDisclosure } from "@mantine/hooks";
 import { AppShell, Burger } from "@mantine/core";
 import { IUser } from "../../types/user";
-import { IconUsers, IconDashboard, IconChartLine, IconSettings } from "@tabler/icons-react";
-// import { users } from "../../data/data";
+import {
+  IconUsers,
+  IconDashboard,
+  IconChartLine,
+  IconSettings,
+} from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
+  const router = useRouter();
   const [opened, { toggle }] = useDisclosure();
   const [users, setUsers] = useState<IUser[]>([]);
   const [loading, setLoading] = useState(false);
@@ -69,42 +74,39 @@ export default function HomePage() {
               hiddenFrom="sm"
               size="sm"
             />
-            One night stand - Back Office
+            one night stand - back office
           </Group>
         </AppShell.Header>
 
         <AppShell.Navbar p="md">
           <span>
-            <IconDashboard /> Dashboard
+            <IconDashboard /> dashboard
           </span>{" "}
-          <Space h="md" />
+          <Divider my="sm" />
           <span>
-            <IconUsers /> Users
+            <IconUsers /> users
           </span>{" "}
-          <Space h="md" />
+          <Divider my="sm" />
           <span>
-            <IconChartLine /> Analytics
+            <IconChartLine /> analytics
           </span>{" "}
-          <Space h="md" />
+          <Divider my="sm" />
           <span>
-            <IconSettings /> Settings
+            <IconSettings /> settings
           </span>{" "}
         </AppShell.Navbar>
 
         <AppShell.Main>
           {loading ? (
-            <Loader size={50} />
+            <div style={{ justifyContent: "center", alignContent: "center" }}>
+              <Loader size={50} type="bars" />
+            </div>
           ) : (
-            <Container>
               <Grid>
                 {users.map((user) => (
-                  <Grid.Col span={4}>
+                  <Grid.Col span={{ base: 12, md: 6, lg: 3 }} key={user.id}>
                     <Card shadow="sm" padding="lg" radius="md" withBorder>
-                      <Card.Section
-                        component="a"
-                        href={`users/${user.id}`}
-                        key={user.id}
-                      >
+                      <Card.Section component="a">
                         <Image
                           src={user.user_account_profile_picture_url}
                           height={240}
@@ -135,6 +137,7 @@ export default function HomePage() {
                         fullWidth
                         mt="md"
                         radius="md"
+                        onClick={() => router.push(`users/${user.id}`)}
                       >
                         View Profile
                       </Button>
@@ -142,7 +145,6 @@ export default function HomePage() {
                   </Grid.Col>
                 ))}
               </Grid>
-            </Container>
           )}
         </AppShell.Main>
         <AppShell.Aside p="md">Options</AppShell.Aside>
