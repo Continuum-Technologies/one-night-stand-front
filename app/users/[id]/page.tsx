@@ -17,14 +17,14 @@ export default function page({ params: { id } }: { params: { id: string } }) {
   const [user, setUser] = useState<IUser>();
   const [loading, setLoading] = useState(false);
   const fetchData = () => {
-    setLoading(true)
+    setLoading(true);
     axios
       .get(
         `https://backend.one-night-stand.co/sd_get_user_account_profile_information_back_office/${id}`
       )
       .then((response) => {
         setUser(response.data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -41,21 +41,20 @@ export default function page({ params: { id } }: { params: { id: string } }) {
         <Loader size={50} />
       ) : (
         <>
+        <h1>User Profile</h1>
           <Title order={1}>
             {`${user?.user_account_first_name} ${user?.user_account_last_name}`}
           </Title>
 
           <Grid>
             <Grid.Col span={6}>
-        
-
-              <Avatar
+              <Image
                 src={user?.user_account_profile_picture_url}
-                alt={`${user?.user_account_first_name}'s Profile Picture`}
-                radius="xl"
-                style={{ marginBottom: "16px" }}
+                height={240}
+                alt="user"
+              
               />
-
+            
               <Text>{`Gender: ${user?.user_account_gender}`}</Text>
               <Text>{`Date of Birth: ${user?.user_account_date_of_birth}`}</Text>
             </Grid.Col>
