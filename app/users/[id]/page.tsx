@@ -32,10 +32,10 @@ export default function page({ params: { id } }: { params: { id: string } }) {
 
   useEffect(() => {
     fetchData();
-  }, [user]);
+  }, []);
 
   return (
-    <Container size="lg" mt={5}>
+    <>
       {loading ? (
         <Loader size={50} style={{ textAlign: "center" }} type="bars" />
       ) : (
@@ -43,7 +43,7 @@ export default function page({ params: { id } }: { params: { id: string } }) {
           <Card.Section component="a">
             <Image
               src={user?.user_account_profile_picture_url}
-              height={240}
+              height={260}
               alt="user"
             />
           </Card.Section>
@@ -260,6 +260,6 @@ export default function page({ params: { id } }: { params: { id: string } }) {
           </Grid>
         </Card>
       )}
-    </Container>
+    </>
   );
 }
