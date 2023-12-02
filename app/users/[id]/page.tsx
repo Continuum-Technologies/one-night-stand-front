@@ -63,14 +63,13 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
       })
       .catch((error) => {
         setShowAlert(true);
-        console.log(error)
+        console.log(error);
       });
   };
-  
+
   useEffect(() => {
     fetchData();
-  }, [showAlert]);
-
+  }, []);
 
   return (
     <>
@@ -87,42 +86,39 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
         </Group>
       ) : (
         <>
-          {showAlert ? (
-            <Alert variant="light" color="red" title="Oops!" icon={icon}>
-              We could not delete the requested profile, try again later
-            </Alert>
-          ) : (
-            <>
-              <Group justify="center">
-                <Modal
-                  opened={opened}
-                  onClose={close}
-                  title="Administrative Consent"
-                  centered
-                >
-                  <form action="" onSubmit={deleteUser}>
-                    <h1>
-                      Are your sure you want to delete this user&apos;s profile?
-                    </h1>
-                    <p>
-                      This action is destructive and may lead to this user not
-                      gaining access to the platfrom. Proceed with caution!
-                    </p>
-                    <Grid mx={4}>
-                      <Grid.Col span={6}>
-                        <Button onClick={close} color="red">
-                          Cancel
-                        </Button>
-                      </Grid.Col>
-                      <Grid.Col span={6}>
-                        <Button type="submit">Sure</Button>
-                      </Grid.Col>
-                    </Grid>
-                  </form>
-                </Modal>
-              </Group>
-            </>
-          )}
+          <Group justify="center">
+            <Modal
+              opened={opened}
+              onClose={close}
+              title="Administrative Consent"
+              centered
+            >
+              {showAlert && (
+                <Alert variant="light" color="red" title="Oops!" icon={icon}>
+                  We could not delete the requested profile, try again later!
+                </Alert>
+              )}
+              <form action="" onSubmit={deleteUser}>
+                <h1>
+                  Are your sure you want to delete this user&apos;s profile?
+                </h1>
+                <p>
+                  This action is destructive and may lead to this user not
+                  gaining access to the platfrom. Proceed with caution!
+                </p>
+                <Grid mx={4}>
+                  <Grid.Col span={6}>
+                    <Button onClick={close} color="red">
+                      Cancel
+                    </Button>
+                  </Grid.Col>
+                  <Grid.Col span={6}>
+                    <Button type="submit">Sure</Button>
+                  </Grid.Col>
+                </Grid>
+              </form>
+            </Modal>
+          </Group>
 
           <Card shadow="sm" padding="md" radius="md" withBorder mt={3}>
             <Card.Section component="a">
