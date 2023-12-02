@@ -45,9 +45,11 @@ export default function HomePage() {
   };
 
   return (
-    <Box maw={440} mx="auto" mt={"md"}>
-      <h1>One Night Stand </h1>
-      <h2>Login to Continue</h2>
+    <Box maw={440} mx="auto" mt={"md"} pt={6}>
+      <Group justify="center">
+        <h2>Login to Continue</h2>
+      </Group>
+
       {showAlert && (
         <Alert variant="light" color="red" title="Oops!" icon={icon}>
           Ask the admin for correct login bro!
@@ -65,8 +67,8 @@ export default function HomePage() {
           label="Password"
           {...form.getInputProps("password")}
         />
-        <Group content="center" mt="md">
-          <Button type="submit">Login</Button>
+        <Group content="center" mt="md" justify="center">
+          <Button type="submit" size="lg">Login</Button>
         </Group>
       </form>
     </Box>

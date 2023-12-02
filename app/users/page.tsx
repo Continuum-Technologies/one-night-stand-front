@@ -45,9 +45,9 @@ export default function HomePage() {
   return (
     <>
       {loading ? (
-        <div style={{ justifyContent: "center", alignContent: "center" }}>
+        <Group justify="center" mt={5}>
           <Loader size={50} type="bars" />
-        </div>
+        </Group>
       ) : (
         <Grid>
           {users.map((user) => (
@@ -76,6 +76,10 @@ export default function HomePage() {
 
                 <Text size="sm" c="dimmed">
                   {user.user_account_email_address}
+                </Text>
+
+                <Text size="sm" c="dimmed">
+                  {user.user_account_phone_number}
                 </Text>
 
                 <Button
